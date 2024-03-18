@@ -1,0 +1,35 @@
+---
+title: "pa_2: averages of duration, f0, and intensity"
+author: "Hunter Metz"
+date: "2024-03-18"
+output: github_document
+---
+
+
+```{R}
+
+# load packages
+
+library(tidyverse)
+library(readr)
+
+# read and print csv file into Rstudio
+
+data <- read_csv("data/data.csv")
+print(data)
+
+# Calculation of average of duration
+avg_duration <- mean(data$durationV, na.rm = TRUE)
+
+# Calculation of average of f0
+avg_f0 <- mean(data$f0, na.rm = TRUE)
+
+# Calculation of average of intensity
+avg_intensity <- mean(data$int, na.rm = TRUE)
+
+# Print the averages
+cat("Average duration:", avg_duration, "\n")
+cat("Average f0:", avg_f0, "\n")
+cat("Average intensity:", avg_intensity, "\n")
+
+#Averages all together: average duration was 0.154, average f0 was 99.992, and the average intensity was 59.591
